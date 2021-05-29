@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     private void init(){
         manager = new CameraTakeManager(this)
                 .setRotation(0)
-                .setCompressEnable(true)
+                .setCompressEnable(false)
                 .setTakeListener(new CameraTakeListener() {
                     @Override
                     public void onSuccess(File bitmapFile, Bitmap mBitmap) {

@@ -61,7 +61,6 @@ public class CameraTakeManager {
         mCamera.setPreviewCallback(new Camera.PreviewCallback() {
             @Override
             public void onPreviewFrame(byte[] bytes, Camera camera) {
-                LogUtil.i("onPreviewFrame " + canTake);
                 if (canTake) {
                     getPic(bytes, camera);
                     canTake = false;
@@ -152,7 +151,6 @@ public class CameraTakeManager {
             @Override
             public void onSuccess(File file) {
                 // TODO 压缩成功后调用，返回压缩后的图片文件
-                FileUtil.deleteFile(filePic);
                 listener.onSuccess(filePic, mBitmap);
             }
 
